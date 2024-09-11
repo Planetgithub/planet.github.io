@@ -1,0 +1,27 @@
+body {
+    font-family: "Open Sans";
+    min-height: 800px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rb 1s linear infinite;
+    color: white;
+}
+div {
+    background: #1c2f2b;
+    border-radius: 10px;
+    margin: 10%;
+    padding: 2px
+}
+a {
+    color: white;
+}
+#gh {
+    width: 75%;
+    height: 75%;
+}
+#gh2 {
+    width: 50%;
+    height: 25%;
+}
