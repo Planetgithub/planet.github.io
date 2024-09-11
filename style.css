@@ -1,0 +1,104 @@
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+@property --color{
+    syntax: "<color>";
+    initial-value: rgb(0,0,0);
+}
+#rainbow {
+    margin: 0 auto;
+    padding: 2em;
+    width: 300px;
+    background: #1c2f2b;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    position: relative;
+    margin-bottom: 10em;
+    
+}
+#rainbow:hover::after, #rainbow:hover::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 90%, var(--rb));
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: -1;
+    animation:  spin 3s linear infinite;
+    
+}   
+body {
+    font-family: "Open Sans";
+    min-height: 800px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rb 1s linear infinite;
+}
+#rainbow:hover::before{
+    filter: blur(5rem)
+}
+#rainbow:active::after, #rainbow:active::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), var(--rb), rgb(100,100,100));
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: -1;
+    animation:  spin 3s linear infinite;
+    
+}   
+#rainbow:active::before{
+    filter: blur(5rem)
+}
+@keyframes spin {
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+@keyframes rb {
+    from {
+        --rb: #ffadad;
+    }
+    12.5% {
+        --rb: #ffd6a5;
+    }
+    25% {
+        --rb: #fdffb6;
+    }
+    37.5% {
+        --rb: #caffbf;
+    }
+    50% {
+        --rb: #9bf6ff;
+    }
+    62.5% {
+        --rb: #a0c4ff;
+    }
+    75% {
+        --rb: #bdb2ff;
+    }
+    87.5%{
+        --rb: #ffc6ff;
+    }
+    to {
+        --rb: #ffadad;
+    }
+}
